@@ -30,6 +30,10 @@ function renderToDo(){
         child2.className = 'toDoTask'
         newElement.appendChild(child2);
 
+        const buttonContainer = document.createElement('div');
+        buttonContainer.id = 'buttonContainer';
+        newElement.appendChild(buttonContainer);
+
         const deleteButton = document.createElement('button');
         deleteButton.id = 'deleteButton';
         deleteButton.innerText = 'Delete'
@@ -37,7 +41,19 @@ function renderToDo(){
             toDoObject.splice(`${index}`,1);
             return renderToDo()
         });
-        newElement.appendChild(deleteButton);
+        buttonContainer.appendChild(deleteButton);
+
+        const editButton = document.createElement('button');
+        editButton.id = 'editButton';
+        editButton.innerText = 'Edit';
+
+        editButton.addEventListener('click', () => {
+            document.getElementById('js-task-input').value = name;
+            document.getElementById('js-date-input').value = dueDate;
+            toDoObject.splice(index, 1); 
+            renderToDo();
+        });
+
     });
     localStorage.setItem('toDoObject',JSON.stringify(toDoObject))
 }
