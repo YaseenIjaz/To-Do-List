@@ -53,6 +53,7 @@ function renderToDo(){
             toDoObject.splice(index, 1); 
             renderToDo();
         });
+        buttonContainer.appendChild(editButton);
 
     });
     localStorage.setItem('toDoObject',JSON.stringify(toDoObject))
