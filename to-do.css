@@ -49,6 +49,11 @@ body{
     align-items: stretch;
 }
 
+#buttonContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 #deleteButton{
     border: none;
     padding: 8px;
@@ -57,3 +62,11 @@ body{
     font-weight: bold;
 }
 
+#editButton{
+    border: none;
+    padding: 8px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+}
